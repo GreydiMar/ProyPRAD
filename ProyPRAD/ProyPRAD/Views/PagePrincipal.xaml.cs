@@ -27,19 +27,14 @@ namespace ProyPRAD.Views
             await Navigation.PushAsync(new TBPageContacts());
         }
 
-        private void btn_salvar_Clicked(object sender, EventArgs e)
+        private async void btn_AddContacto_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new PageContactos());
         }
 
-        private void btn_salvar_Clicked_1(object sender, EventArgs e)
+        private async void btn_AddSitio_Clicked(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_sitios_Clicked(object sender, EventArgs e)
-        {
-
+            await Navigation.PushAsync(new PageSitios());
         }
     }
 }

@@ -4,53 +4,56 @@
              x:Class="ProyPRAD.Views.PagePrincipal">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout BackgroundColor="#5e35b1">
-
-                <Frame BackgroundColor="#280680" Padding="10" CornerRadius="0">
-                    <Label Text="Proyecto RAD!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <StackLayout    BackgroundColor="LightBlue">
+                <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                    <Label Text="Proyecto Xamarin" HorizontalTextAlignment="Center" TextColor="White" FontSize="24"/>
                 </Frame>
-
-                <Image Source="logo.jpeg"
-                   Aspect="AspectFit"
-                   HorizontalOptions="Center" Margin="50,5,50,0"/>
-
+                <Image Source="logoUCENM.png"
+                       Aspect="AspectFill"
+                       HorizontalOptions="Center"
+                       Margin="50,5,50,5"/>
+                
+                <Label Text="Contactos"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"/>
+                
                 <ImageButton x:Name="btn_contacts"
                          Source="contact.png"
-                         HorizontalOptions="Center" 
-                         Margin="20,20,20,0"
-                       
-                         Clicked="btn_contacts_Clicked"/>
-            
-                    <Label Text="Lista contactos"
-                           HorizontalOptions="Center"
-                          VerticalOptions="Start"
-                           />
-
-                <ImageButton x:Name="btn_places"
-                         Source="place.png"
                          HorizontalOptions="Center"
-                         Margin="20,50,20,0"
+                         VerticalOptions="Center"
+                         Margin="100,0,100,5"
+                         Clicked="btn_contacts_Clicked"/>
+                
+                <Button x:Name="btn_AddContacto"
+                        Text="Agregar Contacto"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        TextColor="White"
+                        BackgroundColor="Green"
+                        Clicked="btn_AddContacto_Clicked"/>
+                
+                <Label  Text="Sitios"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        Margin="10,50,10,1"/>
+                
+                <ImageButton x:Name="btn_places"
+                         Source="place.png" 
+                         HorizontalOptions="Center" 
+                         VerticalOptions="Center"
+                         Margin="100,5,100,5"
                          Clicked="btn_places_Clicked"/>
-                <Label Text="Lista sitios"
-                           HorizontalOptions="Center"
-                          VerticalOptions="Start"
-                           />
-
-                <Button x:Name="btn_salvar"
-                        Text="Añadir contactos"
-                        HorizontalOptions="StartAndExpand"
-                        Margin="20,40,20,20"
-                        VerticalOptions="CenterAndExpand"
-                        Clicked="btn_salvar_Clicked"/>
-
-                <Button x:Name="btn_sitios"
-                        Text="Añadir sitios"
-                        HorizontalOptions="End"
-                        Margin="20,0,20,80"
-                        VerticalOptions="CenterAndExpand"
-                        Clicked="btn_sitios_Clicked"/>
-
-
+                
+                <Button x:Name="btn_AddSitio"
+                        Text="Agregar Sitio"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        BackgroundColor="Green"
+                        TextColor="Wheat"
+                        Margin="50,10,50,5"
+                        Clicked="btn_AddSitio_Clicked"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

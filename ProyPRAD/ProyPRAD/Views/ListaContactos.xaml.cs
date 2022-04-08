@@ -10,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ProyPRAD.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TBPageContacts : TabbedPage
+    public partial class ListaContactos : ContentPage
     {
-        public TBPageContacts()
+        public ListaContactos()
         {
             InitializeComponent();
         }
-
     }
 }
