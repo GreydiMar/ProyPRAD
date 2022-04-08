@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyPRAD.Controllers
 {
-    public class DataBase
+    public class DateBase
     {
         public static SQLiteAsyncConnection dbconexion;
         public static void Conexion(string dbpath)

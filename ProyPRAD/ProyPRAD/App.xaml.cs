@@ -13,7 +13,7 @@ namespace ProyPRAD
         {
             InitializeComponent();
 
-            DataBase.Conexion(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DBPR.db3"));
+            DateBase.Conexion(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DBPR.db3"));
 
             MainPage = new NavigationPage(new PagePrincipal());
         }
