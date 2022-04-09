@@ -119,10 +119,9 @@
                    Margin="10,5,10,5"/>
             
             <Entry Keyboard="Text"
-                    TextColor="Black"
-                 Placeholder="Conocido desde la secundaria"
-                    Margin="10,5,10,5"
-                   BackgroundColor="LightGreen"
+                   TextColor="Black"
+                   Margin="10,5,10,5"
+                   BackgroundColor="Wheat"
                    x:Name="nota"/>
 
             <Button Text="Salvar Contacto"

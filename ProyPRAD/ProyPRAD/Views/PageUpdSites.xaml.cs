@@ -107,7 +107,7 @@ namespace ProyPRAD.Views
                 await DisplayAlert("Exito", "Información Coherente", "Ok");
                 var site = new Sites
                 {
-                    Id = Convert.ToInt32(id.Text),
+                    Id = Convert.ToInt32(Id.Text),
                     Nombre_sitio = nombre_sitio.Text,
                     Longitud = Convert.ToDouble(longitud.Text),
                     Latitud = Convert.ToDouble(latitud.Text),
