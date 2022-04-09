@@ -36,5 +36,20 @@ namespace ProyPRAD.Views
         {
             await Navigation.PushAsync(new PageDelContact());
         }
+
+        private async void listacontactos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            var Answer = await Application.Current.MainPage.DisplayAlert("Informacion", "Desea llamar al Contacto?", "Si", "No");
+            if (Answer == true)
+            {
+                await DisplayAlert("Informacion", "Llamando...", "Colgar");
+            }
+            else
+            {
+                return;
+            }
+        }
+
     }
 }

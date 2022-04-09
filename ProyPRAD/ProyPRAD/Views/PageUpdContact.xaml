@@ -4,9 +4,7 @@
              x:Class="ProyPRAD.Views.PageUpdContact">
     <ContentPage.Content>
         <ScrollView>
-            
-        
-        <StackLayout Margin="10,0,10,0"  BackgroundColor="AliceBlue">
+            <StackLayout Margin="10,0,10,0"  BackgroundColor="AliceBlue">
             
             <Image x:Name="Foto" BackgroundColor="Wheat"
                        WidthRequest="100" HeightRequest="200"
@@ -20,9 +18,21 @@
                         BorderColor="Black"
                         Margin="60,5,60,10"/>
             
-            <Label Text="Id"/>
+            <Label Text="Id"
+                   HorizontalOptions="Start"
+                   FontSize="20"
+                   TextColor="Black"
+                   Margin="10,5,10,5"/>
+                
             <Entry Keyboard="Numeric"
-                       Placeholder="Codigo"
+                   Placeholder="Codigo"
+                   TextColor="Black"
+                   Margin="10,5,10,5"
+                   BackgroundColor="Wheat"
+                   WidthRequest="0" HeightRequest="50"
+                   IsSpellCheckEnabled="True"
+                   IsTextPredictionEnabled="True"
+                   MaxLength="10"
                        x:Name="Id"/>
 
             <Label Text="Nombres"

@@ -36,6 +36,38 @@ namespace ProyPRAD.Views
             return null;
         }
 
+        private async Task<bool> Validador()
+        {
+            if (String.IsNullOrWhiteSpace(nombres.Text))
+            {
+                await this.DisplayAlert("Advertencia", "El campo Nombres esta vacio", "Ok");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(apellidos.Text))
+            {
+                await this.DisplayAlert("Advertencia", "El campo Apellidos es Obligatorio", "Ok");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(telefono.Text))
+            {
+                await this.DisplayAlert("Advertencia", "El campo Telefono es Obligatorio", "Ok");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(edad.Text))
+            {
+                await this.DisplayAlert("Advertencia", "El campo edad es Obligatorio", "Ok");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(nota.Text))
+            {
+                await this.DisplayAlert("Advertencia", "El campo Nota es Obligatorio", "Ok");
+                return false;
+            }
+            return true;
+        }
+
+
         private async void btnfoto_Clicked(object sender, EventArgs e)
         {
             photo = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
@@ -60,25 +92,35 @@ namespace ProyPRAD.Views
             if (photo == null)
                 return;
 
-            var contactos = new Contacts()
-
+            if (await Validador())
             {
-                Id = Convert.ToInt32(Id.Text),
-                Foto = traeImagenByteArray(),
-                Nombres = nombres.Text,
-                Apellidos = apellidos.Text,
-                Telefono = Convert.ToDouble(telefono.Text),
-                Edad = Convert.ToDouble(edad.Text),
-                Pais = pais.SelectedItem.ToString(),
-                Nota = nota.Text,
-            };
+                await DisplayAlert("Exito", "Información Coherente", "Ok");
+                var contactos = new Contacts()
 
-            await DateBase.AddContacto(contactos);
+                {
+                    Id = Convert.ToInt32(Id.Text),
+                    Foto = traeImagenByteArray(),
+                    Nombres = nombres.Text,
+                    Apellidos = apellidos.Text,
+                    Telefono = Convert.ToDouble(telefono.Text),
+                    Edad = Convert.ToDouble(edad.Text),
+                    Pais = pais.SelectedItem.ToString(),
+                    Nota = nota.Text,
+                };
 
-            if (await DateBase.AddContacto(contactos) > 0)
-                await DisplayAlert("Aviso", "Contacto Adicionado", "OK");
-            else
-                await DisplayAlert("Aviso", "ha ocurrido un error", "OK");
+                await DateBase.AddContacto(contactos);
+
+                if (await DateBase.AddContacto(contactos) > 0)
+                    await DisplayAlert("Aviso", "Contacto Actualizado", "OK");
+                else
+                    await DisplayAlert("Aviso", "ha ocurrido un error", "OK");
+                nombres.Text = "";
+                apellidos.Text = "";
+                telefono.Text = "";
+                edad.Text = "";
+                nota.Text = "";
+
+            }
         }
 
 

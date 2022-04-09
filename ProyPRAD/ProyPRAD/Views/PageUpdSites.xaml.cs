@@ -15,10 +15,10 @@ using System.Threading;
 namespace ProyPRAD.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PageSitios : ContentPage
+    public partial class PageUpdSites : ContentPage
     {
         Plugin.Media.Abstractions.MediaFile photo = null;
-        public PageSitios()
+        public PageUpdSites()
         {
             InitializeComponent();
         }
@@ -107,6 +107,7 @@ namespace ProyPRAD.Views
                 await DisplayAlert("Exito", "Información Coherente", "Ok");
                 var site = new Sites
                 {
+                    Id = Convert.ToInt32(id.Text),
                     Nombre_sitio = nombre_sitio.Text,
                     Longitud = Convert.ToDouble(longitud.Text),
                     Latitud = Convert.ToDouble(latitud.Text),
@@ -116,7 +117,7 @@ namespace ProyPRAD.Views
                 };
 
                 if (await DateBase.AddSitio(site) > 0)
-                    await DisplayAlert("Aviso", "Registro Adicionado", "OK");
+                    await DisplayAlert("Aviso", "Sitio Actualizado", "OK");
                 else
                     await DisplayAlert("Aviso", "ha ocurrido un error", "OK");
                 nombre_sitio.Text = "";
@@ -126,24 +127,22 @@ namespace ProyPRAD.Views
             }
         }
 
-
-            private async void btnfoto_Clicked(object sender, EventArgs e)
+        private async void btnfoto_Clicked(object sender, EventArgs e)
+        {
+            photo = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
-                photo = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-                {
-                    Directory = "FotosApp",
-                    Name = "test.jpg",
-                    SaveToAlbum = true
-                });
+                Directory = "FotosApp",
+                Name = "test.jpg",
+                SaveToAlbum = true
+            });
 
-                if (photo != null)
+            if (photo != null)
+            {
+                Foto.Source = ImageSource.FromStream(() =>
                 {
-                    Foto.Source = ImageSource.FromStream(() =>
-                    {
-                        return photo.GetStream();
-                    });
-                }
+                    return photo.GetStream();
+                });
             }
         }
-    
+    }
 }

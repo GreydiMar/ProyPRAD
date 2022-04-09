@@ -11,7 +11,7 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10,0,10,0"  BackgroundColor="AliceBlue">
 
             <Button Text="Actualizar"
                     x:Name="btnActualizar"
@@ -24,7 +24,11 @@
                 Clicked="btnEliminar_Clicked"/>
             
             <CollectionView x:Name="listacontactos"
-                            Margin="20">
+                            Margin="20"
+                            SelectionMode="Single"
+                            SelectionChanged="listacontactos_SelectionChanged">
+                
+                
 
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Vertical"

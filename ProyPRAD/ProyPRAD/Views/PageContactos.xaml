@@ -12,17 +12,19 @@
                    Margin="50,30,50,5"/>
 
 
-            <Image x:Name="Foto" BackgroundColor="Wheat"
-                       WidthRequest="100" HeightRequest="200"
-                       Margin="10,5,10,5"/>
+            <Image x:Name="Foto" 
+                   BackgroundColor="Wheat"
+                   WidthRequest="100" 
+                   HeightRequest="200"
+                   Margin="10,5,10,5"/>
                 
                 
-                 <Button x:Name="btnfoto" Text="Tomar Foto"
-                        Clicked="btnfoto_Clicked" 
-                        VerticalOptions="Center"
-                        BackgroundColor="Gainsboro"
-                        BorderColor="Black"
-                        Margin="60,5,60,10"/>
+            <Button x:Name="btnfoto" Text="Tomar Foto"
+                    Clicked="btnfoto_Clicked" 
+                    VerticalOptions="Center"
+                    BackgroundColor="Green"
+                    BorderColor="Black"
+                    Margin="60,5,60,10"/>
 
 
             <Label Text="Nombres"
@@ -104,13 +106,20 @@
             </Picker>
 
             <Label Text="Nota"
-                    FontSize="20"
+                   FontSize="20"
                    TextColor="Black"
                    Margin="10,5,10,5"/>
+                
             <Entry Keyboard="Text"
-                 Placeholder="Conocido desde la secundaria"
-                    Margin="10,5,10,5"
-                   BackgroundColor="LightGreen"
+                   Placeholder="Nota"
+                   Margin="10,5,10,5"
+                   BackgroundColor="Wheat"
+                   TextColor="Black"
+                   WidthRequest="0" 
+                   HeightRequest="50"
+                   IsSpellCheckEnabled="True"
+                   IsTextPredictionEnabled="True"
+                   MaxLength="10"
                    x:Name="nota"/>
 
                 <Button Text="Salvar Contacto"
