@@ -14,12 +14,10 @@ namespace ProyPRAD.Models
         public string Nombres { get; set; }
         [MaxLength(20)]
         public string Apellidos { get; set; }
-        public string Telefono { get; set; }
-        public DateTime Fechanac { get; set; }
-        public string Parentesco { get; set; }
-        public byte[] Foto { get; set; }
-
-        [MaxLength(20)]
+        public double Telefono { get; set; }
+        public double Edad { get; set; }
         public string Pais { get; set; }
+        public byte[] Foto { get; set; }
+        public string Nota { get; set; }
     }
 }

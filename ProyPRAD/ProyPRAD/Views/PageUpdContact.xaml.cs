@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using ProyPRAD.Models;
 using ProyPRAD.Controllers;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using Plugin.Media;
 using System.IO;
 
 namespace ProyPRAD.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PageContactos : ContentPage
+    public partial class PageUpdContact : ContentPage
     {
-
         Plugin.Media.Abstractions.MediaFile photo = null;
-        public PageContactos()
+        public PageUpdContact()
         {
             InitializeComponent();
         }
 
+      
         private Byte[] traeImagenByteArray()
         {
             if (photo != null)
@@ -63,6 +63,7 @@ namespace ProyPRAD.Views
             var contactos = new Contacts()
 
             {
+                Id = Convert.ToInt32(Id.Text),
                 Foto = traeImagenByteArray(),
                 Nombres = nombres.Text,
                 Apellidos = apellidos.Text,

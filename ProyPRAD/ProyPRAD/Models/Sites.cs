@@ -11,14 +11,14 @@ namespace ProyPRAD.Models
         public int Id { get; set; }
 
         [MaxLength(100)]
-        public string Descripcion { get; set; }
+        public string Nombre_sitio { get; set; }
         public double Latitud { get; set; }
         public double Longitud { get; set; }
         public byte[] Foto { get; set; }
+        public string Pais { get; set; }
 
         [MaxLength(70)]
-        public string Pais { get; set; }
-        public string Comentarios { get; set; }
+        public string Nota { get; set; }
 
     }
 }

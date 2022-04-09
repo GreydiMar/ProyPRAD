@@ -19,12 +19,12 @@ namespace ProyPRAD.Views
 
         private async void btn_places_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListaContactos());
+            await Navigation.PushAsync(new ListaSitios());
         }
 
         private async void btn_contacts_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ListaSitios());
+            await Navigation.PushAsync(new ListaContactos());
         }
 
         private async void btn_AddContacto_Clicked(object sender, EventArgs e)
